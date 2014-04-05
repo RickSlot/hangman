@@ -7,7 +7,8 @@
 //
 
 #import "RSLFlipsideViewController.h"
+#import "RSLGameplay.h"
 
-@interface RSLMainViewController : UIViewController <RSLFlipsideViewControllerDelegate>
+@interface RSLMainViewController : UIViewController <RSLFlipsideViewControllerDelegate, UITextFieldDelegate>
 
 @end
