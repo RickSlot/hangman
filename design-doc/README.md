@@ -29,6 +29,20 @@ This viewcontroller is the main entry of the game. it starts the game and handle
 ```
 
 
+###RSLGameplay
+This class handles all the gameplay elements such as choosing a word and checking the input
+```Objective-c
+//Inits the word and settings
+- (id) init;
+
+//Checks if the character exists in the word. returns a string indicating if it does
+- (NSString *) checkIfCharacterExistsInWord: (NSString *) character;
+
+//Checks if a character is already picked, if not call checkIfCharacterExistsinword
+- (NSString *) characterPicked:(NSString * ) character;
+```
+
+
 ###RSLFlipsideViewController
 This view controller handles all settings
 ```objective-c
