@@ -5,6 +5,7 @@
 
 
 ###RSLMainViewController
+This viewcontroller is the main entry of the game. it starts the game and handles all input events
 ```objective-c
 
 //Hide navigation bar
@@ -27,3 +28,24 @@
 - (void) gameover;
 ```
 
+
+###RSLFlipsideViewController
+This view controller handles all settings
+```objective-c
+//Set up sliders and load user defaults
+- (void)viewDidLoad;
+
+//react to change event
+- (IBAction)numberOfGuessesChanged:(UISlider *)sender;
+
+//React to change event
+- (IBAction)wordLengthChanged:(UISlider *)sender; 
+```
+
+
+###RSLHighscoresViewController
+This view controller displays the 10 highest scores ever
+```objective-c
+//load higschores and set up labels
+- (void)viewDidLoad;
+```
