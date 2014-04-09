@@ -27,6 +27,7 @@ NSUserDefaults *userDefaults;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     userDefaults = [NSUserDefaults standardUserDefaults];
     [_numberOfGuesses addTarget:self action:@selector(numberOfGuessesChanged:) forControlEvents:UIControlEventValueChanged];
     [_wordLength addTarget:self action:@selector(wordLengthChanged:) forControlEvents:UIControlEventValueChanged];
@@ -45,7 +46,6 @@ NSUserDefaults *userDefaults;
 
 - (IBAction)done:(id)sender
 {
-    NSLog(@"done!");
     [userDefaults setInteger:(int) _numberOfGuesses.value forKey:@"numberOfGuesses"];
     [userDefaults setInteger:(int) _wordLength.value forKey:@"wordLength"];
     [userDefaults synchronize];
@@ -53,13 +53,11 @@ NSUserDefaults *userDefaults;
 }
 
 - (IBAction)numberOfGuessesChanged:(UISlider *)sender {
-    NSLog(@"slider value = %d", (int)sender.value);
     _numberOfGuessesLabel.text = [[NSMutableString alloc] initWithFormat:@"%d", (int) _numberOfGuesses.value];
     
 }
 
 - (IBAction)wordLengthChanged:(UISlider *)sender {
-    NSLog(@"slider value = %d",(int) sender.value);
     _wordLengthLabel.text = [[NSMutableString alloc] initWithFormat:@"%d", (int) _wordLength.value];
 }
 

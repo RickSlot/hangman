@@ -23,9 +23,14 @@
 
 bool keyboardIsShown;
 
+- (void)viewWillAppear:(BOOL)animated{
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -64,7 +69,6 @@ bool keyboardIsShown;
     if (keyboardIsShown) {
         return;
     }
-    _characterInput.text = @"";
     keyboardIsShown = YES;
 }
 
