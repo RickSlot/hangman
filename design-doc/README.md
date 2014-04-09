@@ -63,3 +63,10 @@ This view controller displays the 10 highest scores ever
 //load higschores and set up labels
 - (void)viewDidLoad;
 ```
+
+##Style
+- Camelcase
+- explaining function names
+- // for single line comments /* */ for multilines
+- { on the same line as function name
+- Model, view, controller
