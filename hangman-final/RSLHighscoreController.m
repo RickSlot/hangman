@@ -104,14 +104,6 @@
 
 - (void)writeTestDataToPlist{
     NSLog(@"Writing!");
-    NSMutableDictionary *highscores = [self dictionaryFromPlist];
-    BOOL result = [self writeDictionaryToPlist:highscores];
-    
-    highscores = [self dictionaryFromPlist];
-    NSString *scoreString = [highscores valueForKey:@"score1"];
-    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-    NSNumber *score = [f numberFromString:scoreString];
-    
     [self addHighscoreWithName:@"Rick" GuessesLeft:1 wordLength:10 totalNumberGuesses:26];
     
 }
