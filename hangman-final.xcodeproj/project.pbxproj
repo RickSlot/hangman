@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1619CE18F96505004067D9 /* RSLHighscoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1619CD18F96505004067D9 /* RSLHighscoreController.m */; };
 		1D36109018F5BD1000981A07 /* RSLHighscoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */; };
 		1D36109218F5C0C300981A07 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D36109118F5C0C300981A07 /* trophy.png */; };
+		1D4D8E7218FB093C001714F1 /* RSLHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D8E7118FB093C001714F1 /* RSLHighscore.m */; };
 		1D6A847918F326A00056486B /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A847818F326A00056486B /* background.jpg */; };
 		1D6A847B18F3271D0056486B /* hangman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A847A18F3271D0056486B /* hangman.gif */; };
 		1DDA39A818F04FE800B01F1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA39A718F04FE800B01F1E /* Foundation.framework */; };
@@ -41,9 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D1619CC18F96505004067D9 /* RSLHighscoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLHighscoreController.h; sourceTree = "<group>"; };
+		1D1619CD18F96505004067D9 /* RSLHighscoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLHighscoreController.m; sourceTree = "<group>"; };
 		1D36108E18F5BD1000981A07 /* RSLHighscoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLHighscoresViewController.h; sourceTree = "<group>"; };
 		1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLHighscoresViewController.m; sourceTree = "<group>"; };
 		1D36109118F5C0C300981A07 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
+		1D4D8E7018FB093C001714F1 /* RSLHighscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSLHighscore.h; path = ../RSLHighscore.h; sourceTree = "<group>"; };
+		1D4D8E7118FB093C001714F1 /* RSLHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSLHighscore.m; path = ../RSLHighscore.m; sourceTree = "<group>"; };
 		1D6A847818F326A00056486B /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1D6A847A18F3271D0056486B /* hangman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hangman.gif; sourceTree = "<group>"; };
 		1DDA39A418F04FE800B01F1E /* hangman-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hangman-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +139,10 @@
 				1DDA39B618F04FE800B01F1E /* RSLAppDelegate.h */,
 				1DDA39B718F04FE800B01F1E /* RSLAppDelegate.m */,
 				1DDA39B918F04FE800B01F1E /* Main.storyboard */,
+				1D4D8E7018FB093C001714F1 /* RSLHighscore.h */,
+				1D4D8E7118FB093C001714F1 /* RSLHighscore.m */,
+				1D1619CC18F96505004067D9 /* RSLHighscoreController.h */,
+				1D1619CD18F96505004067D9 /* RSLHighscoreController.m */,
 				1D36108E18F5BD1000981A07 /* RSLHighscoresViewController.h */,
 				1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */,
 				1DDA39BC18F04FE800B01F1E /* RSLMainViewController.h */,
@@ -291,9 +301,11 @@
 			files = (
 				1DDA39BE18F04FE800B01F1E /* RSLMainViewController.m in Sources */,
 				1D36109018F5BD1000981A07 /* RSLHighscoresViewController.m in Sources */,
+				1D1619CE18F96505004067D9 /* RSLHighscoreController.m in Sources */,
 				1DDA39B818F04FE800B01F1E /* RSLAppDelegate.m in Sources */,
 				1DDA39C118F04FE800B01F1E /* RSLFlipsideViewController.m in Sources */,
 				1DDA39B418F04FE800B01F1E /* main.m in Sources */,
+				1D4D8E7218FB093C001714F1 /* RSLHighscore.m in Sources */,
 				1DDA39E118F0591E00B01F1E /* RSLGameplay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

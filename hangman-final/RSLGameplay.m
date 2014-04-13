@@ -55,7 +55,6 @@
 }
 
 - (NSString *) checkIfCharacterExistsInWord: (NSString *) character{
-    
     if([self.wordToGuessMutable rangeOfString:character].location != NSNotFound){
         while([self.wordToGuessMutable rangeOfString:character].location != NSNotFound){
             int location =  [self.wordToGuessMutable rangeOfString:character].location;

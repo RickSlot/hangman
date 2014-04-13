@@ -27,8 +27,7 @@ bool keyboardIsShown;
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -49,8 +48,7 @@ bool keyboardIsShown;
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -59,11 +57,9 @@ bool keyboardIsShown;
 
 #pragma mark - keyboard
 
-- (void)keyboardWillHide:(NSNotification *)n
-{
+- (void)keyboardWillHide:(NSNotification *)n{
     keyboardIsShown = NO;
 }
-
 - (void)keyboardWillShow:(NSNotification *)n
 {
     if (keyboardIsShown) {

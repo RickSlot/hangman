@@ -7,42 +7,38 @@
 //
 
 #import "RSLHighscoresViewController.h"
+#import "RSLHighscoreController.h"
 
 @interface RSLHighscoresViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *rankOneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankTwoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankThreeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankFourLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankFiveLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankSixLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankSevenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankEightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankNineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rankTenLabel;
 
 @end
 
 @implementation RSLHighscoresViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    // Do any additional setup after loading the view.
+    RSLHighscoreController *highscores = [[RSLHighscoreController alloc] init];
+    [self setLabels];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)setLabels{
+    self.rankOneLabel.text = @"Rick";
 }
-
 
 @end
