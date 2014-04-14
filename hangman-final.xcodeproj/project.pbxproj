@@ -10,9 +10,17 @@
 		1D1619CE18F96505004067D9 /* RSLHighscoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1619CD18F96505004067D9 /* RSLHighscoreController.m */; };
 		1D36109018F5BD1000981A07 /* RSLHighscoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */; };
 		1D36109218F5C0C300981A07 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D36109118F5C0C300981A07 /* trophy.png */; };
-		1D4D8E7218FB093C001714F1 /* RSLHighscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D8E7118FB093C001714F1 /* RSLHighscore.m */; };
 		1D6A847918F326A00056486B /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A847818F326A00056486B /* background.jpg */; };
 		1D6A847B18F3271D0056486B /* hangman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A847A18F3271D0056486B /* hangman.gif */; };
+		1DAC841618FC564E00E4BA75 /* hangman0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC840D18FC564E00E4BA75 /* hangman0.png */; };
+		1DAC841718FC564E00E4BA75 /* hangman1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC840E18FC564E00E4BA75 /* hangman1.png */; };
+		1DAC841818FC564E00E4BA75 /* hangman2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC840F18FC564E00E4BA75 /* hangman2.png */; };
+		1DAC841918FC564E00E4BA75 /* hangman3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC841018FC564E00E4BA75 /* hangman3.png */; };
+		1DAC841A18FC564E00E4BA75 /* hangman4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC841118FC564E00E4BA75 /* hangman4.png */; };
+		1DAC841B18FC564E00E4BA75 /* hangman5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC841218FC564E00E4BA75 /* hangman5.png */; };
+		1DAC841C18FC564E00E4BA75 /* hangman6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC841318FC564E00E4BA75 /* hangman6.png */; };
+		1DAC841D18FC564E00E4BA75 /* hangman7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC841418FC564E00E4BA75 /* hangman7.png */; };
+		1DAC841E18FC564E00E4BA75 /* hangman8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC841518FC564E00E4BA75 /* hangman8.png */; };
 		1DDA39A818F04FE800B01F1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA39A718F04FE800B01F1E /* Foundation.framework */; };
 		1DDA39AA18F04FE800B01F1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA39A918F04FE800B01F1E /* CoreGraphics.framework */; };
 		1DDA39AC18F04FE800B01F1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA39AB18F04FE800B01F1E /* UIKit.framework */; };
@@ -30,6 +38,7 @@
 		1DDA39D618F04FE800B01F1E /* hangman_finalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA39D518F04FE800B01F1E /* hangman_finalTests.m */; };
 		1DDA39E118F0591E00B01F1E /* RSLGameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA39E018F0591E00B01F1E /* RSLGameplay.m */; };
 		1DDA39E518F0703500B01F1E /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DDA39E418F0703500B01F1E /* words.plist */; };
+		1DE92A0218FC346700570C6F /* restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE92A0118FC346700570C6F /* restart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +57,17 @@
 		1D36108E18F5BD1000981A07 /* RSLHighscoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLHighscoresViewController.h; sourceTree = "<group>"; };
 		1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLHighscoresViewController.m; sourceTree = "<group>"; };
 		1D36109118F5C0C300981A07 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
-		1D4D8E7018FB093C001714F1 /* RSLHighscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSLHighscore.h; path = ../RSLHighscore.h; sourceTree = "<group>"; };
-		1D4D8E7118FB093C001714F1 /* RSLHighscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSLHighscore.m; path = ../RSLHighscore.m; sourceTree = "<group>"; };
 		1D6A847818F326A00056486B /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1D6A847A18F3271D0056486B /* hangman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hangman.gif; sourceTree = "<group>"; };
+		1DAC840D18FC564E00E4BA75 /* hangman0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman0.png; sourceTree = "<group>"; };
+		1DAC840E18FC564E00E4BA75 /* hangman1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman1.png; sourceTree = "<group>"; };
+		1DAC840F18FC564E00E4BA75 /* hangman2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman2.png; sourceTree = "<group>"; };
+		1DAC841018FC564E00E4BA75 /* hangman3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman3.png; sourceTree = "<group>"; };
+		1DAC841118FC564E00E4BA75 /* hangman4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman4.png; sourceTree = "<group>"; };
+		1DAC841218FC564E00E4BA75 /* hangman5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman5.png; sourceTree = "<group>"; };
+		1DAC841318FC564E00E4BA75 /* hangman6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman6.png; sourceTree = "<group>"; };
+		1DAC841418FC564E00E4BA75 /* hangman7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman7.png; sourceTree = "<group>"; };
+		1DAC841518FC564E00E4BA75 /* hangman8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman8.png; sourceTree = "<group>"; };
 		1DDA39A418F04FE800B01F1E /* hangman-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hangman-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDA39A718F04FE800B01F1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DDA39A918F04FE800B01F1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +92,7 @@
 		1DDA39DF18F0591E00B01F1E /* RSLGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLGameplay.h; sourceTree = "<group>"; };
 		1DDA39E018F0591E00B01F1E /* RSLGameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLGameplay.m; sourceTree = "<group>"; };
 		1DDA39E418F0703500B01F1E /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
+		1DE92A0118FC346700570C6F /* restart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +119,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DAC840C18FC564E00E4BA75 /* hangman images */ = {
+			isa = PBXGroup;
+			children = (
+				1DAC840D18FC564E00E4BA75 /* hangman0.png */,
+				1DAC840E18FC564E00E4BA75 /* hangman1.png */,
+				1DAC840F18FC564E00E4BA75 /* hangman2.png */,
+				1DAC841018FC564E00E4BA75 /* hangman3.png */,
+				1DAC841118FC564E00E4BA75 /* hangman4.png */,
+				1DAC841218FC564E00E4BA75 /* hangman5.png */,
+				1DAC841318FC564E00E4BA75 /* hangman6.png */,
+				1DAC841418FC564E00E4BA75 /* hangman7.png */,
+				1DAC841518FC564E00E4BA75 /* hangman8.png */,
+			);
+			path = "hangman images";
+			sourceTree = "<group>";
+		};
 		1DDA399B18F04FE800B01F1E = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +172,6 @@
 				1DDA39B618F04FE800B01F1E /* RSLAppDelegate.h */,
 				1DDA39B718F04FE800B01F1E /* RSLAppDelegate.m */,
 				1DDA39B918F04FE800B01F1E /* Main.storyboard */,
-				1D4D8E7018FB093C001714F1 /* RSLHighscore.h */,
-				1D4D8E7118FB093C001714F1 /* RSLHighscore.m */,
 				1D1619CC18F96505004067D9 /* RSLHighscoreController.h */,
 				1D1619CD18F96505004067D9 /* RSLHighscoreController.m */,
 				1D36108E18F5BD1000981A07 /* RSLHighscoresViewController.h */,
@@ -189,6 +220,8 @@
 		1DDA39E618F0704900B01F1E /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				1DAC840C18FC564E00E4BA75 /* hangman images */,
+				1DE92A0118FC346700570C6F /* restart.png */,
 				1D36109118F5C0C300981A07 /* trophy.png */,
 				1D6A847A18F3271D0056486B /* hangman.gif */,
 				1D6A847818F326A00056486B /* background.jpg */,
@@ -275,12 +308,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D6A847B18F3271D0056486B /* hangman.gif in Resources */,
+				1DAC841E18FC564E00E4BA75 /* hangman8.png in Resources */,
+				1DAC841D18FC564E00E4BA75 /* hangman7.png in Resources */,
+				1DAC841B18FC564E00E4BA75 /* hangman5.png in Resources */,
 				1DDA39C318F04FE800B01F1E /* Images.xcassets in Resources */,
+				1DAC841C18FC564E00E4BA75 /* hangman6.png in Resources */,
 				1D6A847918F326A00056486B /* background.jpg in Resources */,
+				1DAC841718FC564E00E4BA75 /* hangman1.png in Resources */,
+				1DAC841818FC564E00E4BA75 /* hangman2.png in Resources */,
+				1DE92A0218FC346700570C6F /* restart.png in Resources */,
 				1DDA39B218F04FE800B01F1E /* InfoPlist.strings in Resources */,
 				1DDA39BB18F04FE800B01F1E /* Main.storyboard in Resources */,
+				1DAC841618FC564E00E4BA75 /* hangman0.png in Resources */,
+				1DAC841918FC564E00E4BA75 /* hangman3.png in Resources */,
 				1DDA39E518F0703500B01F1E /* words.plist in Resources */,
 				1D36109218F5C0C300981A07 /* trophy.png in Resources */,
+				1DAC841A18FC564E00E4BA75 /* hangman4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +348,6 @@
 				1DDA39B818F04FE800B01F1E /* RSLAppDelegate.m in Sources */,
 				1DDA39C118F04FE800B01F1E /* RSLFlipsideViewController.m in Sources */,
 				1DDA39B418F04FE800B01F1E /* main.m in Sources */,
-				1D4D8E7218FB093C001714F1 /* RSLHighscore.m in Sources */,
 				1DDA39E118F0591E00B01F1E /* RSLGameplay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

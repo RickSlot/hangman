@@ -7,7 +7,8 @@
 //
 
 #import "RSLMainViewController.h"
-
+#import "RSLHighscoreController.h"
+#import "RSLHighscoresViewController.h"
 @interface RSLMainViewController ()
 
 @property (nonatomic) RSLGameplay *gameplay;
@@ -16,10 +17,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lettersGuessedLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *hangmanImageView;
+
+
 
 @end
 
 @implementation RSLMainViewController
+
+RSLHighscoreController *highscore;
 
 bool keyboardIsShown;
 
@@ -30,22 +36,9 @@ bool keyboardIsShown;
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:self.view.window];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:self.view.window];
-    
+    highscore = [[RSLHighscoreController alloc] init];
     keyboardIsShown = NO;
-    [self.characterInput setDelegate:self];
-    _gameplay = [[RSLGameplay alloc] init];
-    _guessesLeftLabel.text = _gameplay.guessesLeft.stringValue;
-    _wordLabel.text = _gameplay.wordStringForLabel;
-    
-    
+    [self initGame];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -57,16 +50,6 @@ bool keyboardIsShown;
 
 #pragma mark - keyboard
 
-- (void)keyboardWillHide:(NSNotification *)n{
-    keyboardIsShown = NO;
-}
-- (void)keyboardWillShow:(NSNotification *)n
-{
-    if (keyboardIsShown) {
-        return;
-    }
-    keyboardIsShown = YES;
-}
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
@@ -85,10 +68,13 @@ bool keyboardIsShown;
             [lettersGuessed appendString:@" "];
         }
         _lettersGuessedLabel.text = lettersGuessed;
+        UIImage *image = [UIImage imageNamed:[self calculateImage]];
+        [_hangmanImageView setImage:image];
+
     }else{
         _feedbackLabel.text = @"Please pick just one character!";
     }
-    return YES;
+    return NO;
 }
 
 #pragma mark - Flipside View
@@ -109,11 +95,77 @@ bool keyboardIsShown;
 - (void) gameover{
     NSString *text = [[NSString alloc] initWithFormat: @"Game over, we were looking for the word %@!", _gameplay.wordToGuess];
     _feedbackLabel.text = text;
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Game over! :(" message:text delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+    alert.tag = 2;
+    [alert show];
 }
 
 - (void) gamewin{
     NSLog(@"You won!");
     _feedbackLabel.text = @"Congratulations, you won the game!";
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You won the game! Please enter your name." delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    alert.tag = 1;
+    [alert show];
+}
+
+- (void) initGame{
+    [self.characterInput setDelegate:self];
+    _gameplay = [[RSLGameplay alloc] init];
+    _guessesLeftLabel.text = _gameplay.guessesLeft.stringValue;
+    _wordLabel.text = _gameplay.wordStringForLabel;
+    _characterInput.text = @"";
+    _lettersGuessedLabel.text = @"";
+    UIImage *image = [UIImage imageNamed:@"hangman8"];
+    [_hangmanImageView setImage:image];
+    _feedbackLabel.text = @"Please pick a letter!";
+}
+
+- (NSString *) calculateImage{
+    double percentage = [_gameplay.guessesLeft doubleValue] / [_gameplay.totalNumberGuesses doubleValue];
+    NSString *imageName;
+    NSLog(@"percentage: %f", percentage);
+    if(percentage == 0){
+        imageName = @"hangman0";
+    }else if(percentage < 0.125){
+        imageName = @"hangman1";
+    }else if(percentage < 0.25){
+        imageName = @"hangman2";
+    }else if(percentage < 0.375){
+        imageName = @"hangman3";
+    }else if(percentage < 0.5){
+        imageName = @"hangman4";
+    }else if(percentage < 0.625){
+        imageName = @"hangman5";
+    }else if(percentage < 0.75){
+        imageName = @"hangman6";
+    }else if(percentage < 0.875){
+        imageName = @"hangman7";
+    }else if(percentage >= 0.875){
+        imageName = @"hangman8";
+    }
+    NSLog(@"%@", imageName);
+        
+    return imageName;
+}
+
+- (IBAction)resetGame:(id)sender {
+    [self initGame];
+}
+
+#pragma mark - alertview stuff
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag == 1){
+        int score = [highscore calculateHighscoreWithGuessesLeft:[_gameplay.guessesLeft integerValue] wordLength:_gameplay.wordToGuess.length totalNumberGuesses:[_gameplay.totalNumberGuesses integerValue]];
+        NSString *name = [alertView textFieldAtIndex:0].text;
+        [highscore addHighscoreWithName:name andScore: score];
+        [self initGame];
+        [self performSegueWithIdentifier:@"highscore" sender:self];
+    }else if(alertView.tag == 2){
+        [self initGame];
+    }
 }
 
 @end

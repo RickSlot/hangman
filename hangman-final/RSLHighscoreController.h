@@ -12,7 +12,9 @@
 
 - (id) init;
 
-- (void) addHighscoreWithName:(NSString *) name GuessesLeft:(int) guessesLeft wordLength:(int) wordLength totalNumberGuesses:(int) totalNumberGuesses;
+- (void) addHighscoreWithName:(NSString *) name andScore:(int) score;
 
-- (NSArray *) getHighscoreNamesInOrder;
+- (NSMutableDictionary*)dictionaryFromPlist;
+
+- (int) calculateHighscoreWithGuessesLeft:(int) guessesLeft wordLength:(int) wordLength totalNumberGuesses:(int) totalNumberGuesses;
 @end

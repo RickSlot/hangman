@@ -16,6 +16,7 @@
 @property (nonatomic) NSMutableString *wordStringForLabel;
 @property (nonatomic) NSArray *words;
 @property (nonatomic) NSMutableSet *chosenCharacters;
+@property (nonatomic) NSNumber *totalNumberGuesses;
 
 - (id) init;
 - (NSString *) checkIfCharacterExistsInWord: (NSString *) character;

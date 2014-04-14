@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSLHighscoresViewController : UIViewController
+@interface RSLHighscoresViewController : UIViewController 
 
 @end

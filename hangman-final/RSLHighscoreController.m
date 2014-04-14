@@ -7,19 +7,16 @@
 //
 
 #import "RSLHighscoreController.h"
-#import "RSLHighscore.h"
 
 @implementation RSLHighscoreController
 
 - (id) init{
     self = [super init];
     if(!self) return nil;
-    [self writeTestDataToPlist];
     return self;
 }
 
-- (void) addHighscoreWithName:(NSString *) name GuessesLeft:(int) guessesLeft wordLength:(int) wordLength totalNumberGuesses:(int) totalNumberGuesses{
-    int scored = ((wordLength * 1000 * guessesLeft) - (totalNumberGuesses * 100) - ((totalNumberGuesses - guessesLeft) * 100))/totalNumberGuesses;
+- (void) addHighscoreWithName:(NSString *) name andScore:(int) score{
     NSMutableDictionary *dictFromPlist = [self dictionaryFromPlist];
     int position = -1;
     for(int i = 1; i <= 10; i++){
@@ -29,7 +26,7 @@
             NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
             NSNumber *scoreNumber = [f numberFromString:scoreString];
             int localScore = [scoreNumber integerValue];
-            if(scored >= localScore){
+            if(score >= localScore){
                 position = i;
                 break;
             }
@@ -38,22 +35,22 @@
             break;
         }
     }
-    NSLog(@"name: %@", name);
 
     if(position != -1){
-        dictFromPlist = [self createDictionaryForScore:scored withName:name withDict:dictFromPlist andPosition:position];
-        BOOL saved = [self writeDictionaryToPlist:dictFromPlist];
+        dictFromPlist = [self createDictionaryForScore:score withName:name withDict:dictFromPlist andPosition:position];
+        [self writeDictionaryToPlist:dictFromPlist];
     }else{
         NSLog(@"not a highscore!");
     }
 }
-- (NSArray *) getHighscoreNamesInOrder{
-    return nil;
+
+- (int) calculateHighscoreWithGuessesLeft:(int) guessesLeft wordLength:(int) wordLength totalNumberGuesses:(int) totalNumberGuesses{
+    int score = ((wordLength * 100 * guessesLeft) / totalNumberGuesses) + (totalNumberGuesses - guessesLeft) * 100;
+    return score;
 }
 
 - (NSMutableDictionary*) createDictionaryForScore:(int) scored withName:(NSString*) name withDict:(NSMutableDictionary*) dict andPosition:(int) position{
     NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
-    NSLog(@"name2: %@", name);
     
     NSString *scoreDown = nil;
     NSString *nameDown = nil;
@@ -100,12 +97,6 @@
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"highscores.plist"];
     
     return [plistDict writeToFile:path atomically:YES];
-}
-
-- (void)writeTestDataToPlist{
-    NSLog(@"Writing!");
-    [self addHighscoreWithName:@"Rick" GuessesLeft:1 wordLength:10 totalNumberGuesses:26];
-    
 }
 
 @end

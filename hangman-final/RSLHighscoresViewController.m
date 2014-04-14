@@ -10,26 +10,18 @@
 #import "RSLHighscoreController.h"
 
 @interface RSLHighscoresViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *rankOneLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankTwoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankThreeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankFourLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankFiveLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankSixLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankSevenLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankEightLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankNineLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rankTenLabel;
 
 @end
 
 @implementation RSLHighscoresViewController
 
+RSLHighscoreController *highscores;
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    RSLHighscoreController *highscores = [[RSLHighscoreController alloc] init];
+    highscores = [[RSLHighscoreController alloc] init];
     [self setLabels];
 }
 
@@ -38,7 +30,18 @@
 }
 
 - (void)setLabels{
-    self.rankOneLabel.text = @"Rick";
+    NSDictionary *dict = [highscores dictionaryFromPlist];
+    
+    for(int i = 1; i <= 10; i++){
+        UILabel *nameLabel = (UILabel *)[self.view viewWithTag:i];
+        NSString *nameString = [[NSString alloc] initWithFormat:@"name%d", i];
+        
+        UILabel *scoreLabel = (UILabel *)[self.view viewWithTag:i+10];
+        NSString *scoreString = [[NSString alloc] initWithFormat:@"score%d", i];
+        
+        nameLabel.text = [dict valueForKey:nameString];
+        scoreLabel.text = [dict valueForKey:scoreString];
+    }
 }
 
 @end

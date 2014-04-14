@@ -17,7 +17,6 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     _words = [[NSArray alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"words" ofType: @"plist"]];
-    
     int random;
     while(1){
         random = arc4random_uniform([_words count]);
@@ -26,6 +25,7 @@
             break;
         }
     }
+    NSLog(@"Word to guess: %@", _wordToGuess);
     _chosenCharacters = [[NSMutableSet alloc] init];
     _wordToGuessMutable = [[NSMutableString alloc] initWithString:_wordToGuess];
     
@@ -33,6 +33,7 @@
     
     
     _guessesLeft = [NSNumber numberWithInt:[userDefaults integerForKey:@"numberOfGuesses"]];
+    _totalNumberGuesses = _guessesLeft;
     [self setWordStringForLabel];
     
     return self;
