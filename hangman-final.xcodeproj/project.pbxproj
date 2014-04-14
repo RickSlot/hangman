@@ -10,6 +10,7 @@
 		1D1619CE18F96505004067D9 /* RSLHighscoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1619CD18F96505004067D9 /* RSLHighscoreController.m */; };
 		1D36109018F5BD1000981A07 /* RSLHighscoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */; };
 		1D36109218F5C0C300981A07 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D36109118F5C0C300981A07 /* trophy.png */; };
+		1D3E66F118FC64ED00418751 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E66F018FC64ED00418751 /* settings.png */; };
 		1D6A847918F326A00056486B /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A847818F326A00056486B /* background.jpg */; };
 		1D6A847B18F3271D0056486B /* hangman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A847A18F3271D0056486B /* hangman.gif */; };
 		1DAC841618FC564E00E4BA75 /* hangman0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAC840D18FC564E00E4BA75 /* hangman0.png */; };
@@ -57,6 +58,7 @@
 		1D36108E18F5BD1000981A07 /* RSLHighscoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLHighscoresViewController.h; sourceTree = "<group>"; };
 		1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLHighscoresViewController.m; sourceTree = "<group>"; };
 		1D36109118F5C0C300981A07 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
+		1D3E66F018FC64ED00418751 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		1D6A847818F326A00056486B /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1D6A847A18F3271D0056486B /* hangman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hangman.gif; sourceTree = "<group>"; };
 		1DAC840D18FC564E00E4BA75 /* hangman0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangman0.png; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				1DAC840C18FC564E00E4BA75 /* hangman images */,
 				1DE92A0118FC346700570C6F /* restart.png */,
 				1D36109118F5C0C300981A07 /* trophy.png */,
+				1D3E66F018FC64ED00418751 /* settings.png */,
 				1D6A847A18F3271D0056486B /* hangman.gif */,
 				1D6A847818F326A00056486B /* background.jpg */,
 				1DDA39E418F0703500B01F1E /* words.plist */,
@@ -313,6 +316,7 @@
 				1DAC841B18FC564E00E4BA75 /* hangman5.png in Resources */,
 				1DDA39C318F04FE800B01F1E /* Images.xcassets in Resources */,
 				1DAC841C18FC564E00E4BA75 /* hangman6.png in Resources */,
+				1D3E66F118FC64ED00418751 /* settings.png in Resources */,
 				1D6A847918F326A00056486B /* background.jpg in Resources */,
 				1DAC841718FC564E00E4BA75 /* hangman1.png in Resources */,
 				1DAC841818FC564E00E4BA75 /* hangman2.png in Resources */,

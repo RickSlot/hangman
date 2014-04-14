@@ -38,6 +38,7 @@ bool keyboardIsShown;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     highscore = [[RSLHighscoreController alloc] init];
     keyboardIsShown = NO;
+    [_characterInput becomeFirstResponder];
     [self initGame];
 }
 
@@ -52,7 +53,6 @@ bool keyboardIsShown;
 
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
     if([_characterInput.text length] == 1){
         _feedbackLabel.text = [_gameplay characterPicked:self.characterInput.text];
         _guessesLeftLabel.text = _gameplay.guessesLeft.stringValue;
@@ -74,6 +74,7 @@ bool keyboardIsShown;
     }else{
         _feedbackLabel.text = @"Please pick just one character!";
     }
+    _characterInput.text = @"";
     return NO;
 }
 
@@ -124,7 +125,6 @@ bool keyboardIsShown;
 - (NSString *) calculateImage{
     double percentage = [_gameplay.guessesLeft doubleValue] / [_gameplay.totalNumberGuesses doubleValue];
     NSString *imageName;
-    NSLog(@"percentage: %f", percentage);
     if(percentage == 0){
         imageName = @"hangman0";
     }else if(percentage < 0.125){
@@ -143,9 +143,7 @@ bool keyboardIsShown;
         imageName = @"hangman7";
     }else if(percentage >= 0.875){
         imageName = @"hangman8";
-    }
-    NSLog(@"%@", imageName);
-        
+    }        
     return imageName;
 }
 
