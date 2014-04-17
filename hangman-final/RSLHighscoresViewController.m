@@ -17,6 +17,9 @@
 
 RSLHighscoreController *highscores;
 
+/*
+ * Sets the background and shows the navigation bar. it calls setlabels to set all the highscores
+ */
 - (void)viewDidLoad{
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
@@ -29,6 +32,9 @@ RSLHighscoreController *highscores;
     [super didReceiveMemoryWarning];
 }
 
+/*
+ * This function sets all the labels by going through a plist with the highscores
+ */
 - (void)setLabels{
     NSDictionary *dict = [highscores dictionaryFromPlist];
     

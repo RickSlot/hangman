@@ -16,6 +16,9 @@
     return self;
 }
 
+/*
+ * This function adds a new highscore to the plist if it is a highscore
+ */
 - (void) addHighscoreWithName:(NSString *) name andScore:(int) score{
     NSMutableDictionary *dictFromPlist = [self dictionaryFromPlist];
     int position = -1;
@@ -44,11 +47,17 @@
     }
 }
 
+/*
+ * This function calculates the highscore of the game played
+ */
 - (int) calculateHighscoreWithGuessesLeft:(int) guessesLeft wordLength:(int) wordLength totalNumberGuesses:(int) totalNumberGuesses{
     int score = ((wordLength * 100 * guessesLeft) / totalNumberGuesses) + (totalNumberGuesses - guessesLeft) * 100;
     return score;
 }
 
+/*
+ * This function creates a dictionary with highscores to be saved as plist
+ */
 - (NSMutableDictionary*) createDictionaryForScore:(int) scored withName:(NSString*) name withDict:(NSMutableDictionary*) dict andPosition:(int) position{
     NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
     
@@ -80,6 +89,9 @@
     return newDict;
 }
 
+/*
+ * This function reads the plist and returns a dictionary
+ */
 - (NSMutableDictionary*)dictionaryFromPlist {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -91,6 +103,9 @@
     return propertyListValues;
 }
 
+/*
+ * This function saves a dictionary to a plist
+ */
 - (BOOL)writeDictionaryToPlist:(NSDictionary*)plistDict{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];

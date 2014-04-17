@@ -11,6 +11,9 @@
 
 @implementation RSLGameplay
 
+/*
+ * This function inits a gameplay object and picks a random word.
+ */
 - (id) init{
     self = [super init];
     if(!self) return nil;
@@ -40,6 +43,9 @@
 
 }
 
+/*
+ * This function checks if a character is already picked and handles the input
+ */
 - (BOOL) characterPicked:(NSString * ) character{
     NSString *characterUpperCase = [self convertToUpperCase:character];
     for(NSString *alreadyPicked in _chosenCharacters){
@@ -51,10 +57,16 @@
     return [self checkIfCharacterExistsInWord:characterUpperCase];
 }
 
+/*
+ * This function converts a character to uppercase
+ */
 - (NSString *) convertToUpperCase:(NSString *) character{
     return [character uppercaseString];
 }
 
+/*
+ * This function checks if a character exists in a word
+ */
 - (BOOL) checkIfCharacterExistsInWord: (NSString *) character{
     if([self.wordToGuessMutable rangeOfString:character].location != NSNotFound){
         while([self.wordToGuessMutable rangeOfString:character].location != NSNotFound){
@@ -72,6 +84,9 @@
     }
 }
 
+/*
+ * This function sets a string with a number of dashes according to the wordlength
+ */
 - (void) setWordStringForLabel{
     int wordLength = [self.wordToGuess length];
     NSMutableString *labelString = [[NSMutableString alloc] init];
