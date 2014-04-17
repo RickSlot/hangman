@@ -24,6 +24,9 @@
 
 NSUserDefaults *userDefaults;
 
+/*
+ * Sets up the sliders with the right values
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,6 +47,9 @@ NSUserDefaults *userDefaults;
 
 #pragma mark - Actions
 
+/*
+ * Saves the settings
+ */
 - (IBAction)done:(id)sender
 {
     [userDefaults setInteger:(int) _numberOfGuesses.value forKey:@"numberOfGuesses"];
@@ -52,11 +58,17 @@ NSUserDefaults *userDefaults;
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
+/*
+ * This function sets the number of guesses label to the cosen number of guesses
+ */
 - (IBAction)numberOfGuessesChanged:(UISlider *)sender {
     _numberOfGuessesLabel.text = [[NSMutableString alloc] initWithFormat:@"%d", (int) _numberOfGuesses.value];
     
 }
 
+/*
+ * This function sets the word length label to the chosen word length
+ */
 - (IBAction)wordLengthChanged:(UISlider *)sender {
     _wordLengthLabel.text = [[NSMutableString alloc] initWithFormat:@"%d", (int) _wordLength.value];
 }

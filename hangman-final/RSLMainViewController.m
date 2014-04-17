@@ -14,12 +14,9 @@
 @property (nonatomic) RSLGameplay *gameplay;
 @property (strong, nonatomic) IBOutlet UITextField *characterInput;
 @property (weak, nonatomic) IBOutlet UILabel *guessesLeftLabel;
-@property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lettersGuessedLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *hangmanImageView;
-
-
 
 @end
 
@@ -29,11 +26,17 @@ RSLHighscoreController *highscore;
 
 bool keyboardIsShown;
 
+/*
+ * Shows the keyabord and hides the navigation bar
+ */
 - (void)viewWillAppear:(BOOL)animated{
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
     [_characterInput becomeFirstResponder];
 }
 
+/*
+ * Sets up a new game and sets the background
+ */
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
@@ -51,6 +54,9 @@ bool keyboardIsShown;
 #pragma mark - keyboard
 
 
+/*
+ * Handles the input when the user presses return on the keyboard
+ */
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     if([_characterInput.text length] == 1){
         [_gameplay characterPicked:self.characterInput.text];
@@ -70,8 +76,6 @@ bool keyboardIsShown;
         UIImage *image = [UIImage imageNamed:[self calculateImage]];
         [_hangmanImageView setImage:image];
 
-    }else{
-        _feedbackLabel.text = @"Please pick just one character!";
     }
     _characterInput.text = @"";
     return NO;
@@ -94,24 +98,31 @@ bool keyboardIsShown;
 }
 
 #pragma mark - game stuff
+/*
+ * This function is called when the game is over and the user lost
+ */
 - (void) gameover{
     [_characterInput resignFirstResponder];
     NSString *text = [[NSString alloc] initWithFormat: @"Game over, we were looking for the word %@!", _gameplay.wordToGuess];
-    _feedbackLabel.text = text;
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Game over! :(" message:text delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil];
     alert.tag = 2;
     [alert show];
 }
 
+/*
+ * This function is called when the game is over and the user won, it asks for a name and submits the score to the highscores
+ */
 - (void) gamewin{
     NSLog(@"You won!");
-    _feedbackLabel.text = @"Congratulations, you won the game!";
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You won the game! Please enter your name." delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     alert.tag = 1;
     [alert show];
 }
 
+/*
+ * This function sets up a new game
+ */
 - (void) initGame{
     [self.characterInput setDelegate:self];
     _gameplay = [[RSLGameplay alloc] init];
@@ -121,9 +132,11 @@ bool keyboardIsShown;
     _lettersGuessedLabel.text = @"";
     UIImage *image = [UIImage imageNamed:@"hangman8"];
     [_hangmanImageView setImage:image];
-    _feedbackLabel.text = @"Please pick a letter!";
 }
 
+/*
+ * This function calculates which image should be shown
+ */
 - (NSString *) calculateImage{
     double percentage = [_gameplay.guessesLeft doubleValue] / [_gameplay.totalNumberGuesses doubleValue];
     NSString *imageName;
@@ -149,12 +162,18 @@ bool keyboardIsShown;
     return imageName;
 }
 
+/*
+ * This function gets called when a user resets the game
+ */
 - (IBAction)resetGame:(id)sender {
     [self initGame];
 }
 
 #pragma mark - alertview stuff
 
+/*
+ * This function handles what happens when the game is over.
+ */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(alertView.tag == 1){
