@@ -31,6 +31,7 @@ bool keyboardIsShown;
 
 - (void)viewWillAppear:(BOOL)animated{
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    [_characterInput becomeFirstResponder];
 }
 
 - (void)viewDidLoad{
@@ -38,13 +39,11 @@ bool keyboardIsShown;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     highscore = [[RSLHighscoreController alloc] init];
     keyboardIsShown = NO;
-    [_characterInput becomeFirstResponder];
     [self initGame];
 }
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -54,7 +53,7 @@ bool keyboardIsShown;
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     if([_characterInput.text length] == 1){
-        _feedbackLabel.text = [_gameplay characterPicked:self.characterInput.text];
+        [_gameplay characterPicked:self.characterInput.text];
         _guessesLeftLabel.text = _gameplay.guessesLeft.stringValue;
         _wordLabel.text = _gameplay.wordStringForLabel;
         if(_gameplay.guessesLeft.intValue == 0){
@@ -87,6 +86,8 @@ bool keyboardIsShown;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"prepare");
+    [_characterInput resignFirstResponder];
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     }
@@ -94,6 +95,7 @@ bool keyboardIsShown;
 
 #pragma mark - game stuff
 - (void) gameover{
+    [_characterInput resignFirstResponder];
     NSString *text = [[NSString alloc] initWithFormat: @"Game over, we were looking for the word %@!", _gameplay.wordToGuess];
     _feedbackLabel.text = text;
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Game over! :(" message:text delegate:self cancelButtonTitle:@"Done!" otherButtonTitles:nil];
@@ -162,6 +164,7 @@ bool keyboardIsShown;
         [self initGame];
         [self performSegueWithIdentifier:@"highscore" sender:self];
     }else if(alertView.tag == 2){
+        [_characterInput becomeFirstResponder];
         [self initGame];
     }
 }

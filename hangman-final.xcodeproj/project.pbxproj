@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D1619CE18F96505004067D9 /* RSLHighscoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1619CD18F96505004067D9 /* RSLHighscoreController.m */; };
+		1D25F1A718FFCE9100984F76 /* RSLGameplayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25F1A618FFCE9100984F76 /* RSLGameplayTest.m */; };
 		1D36109018F5BD1000981A07 /* RSLHighscoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */; };
 		1D36109218F5C0C300981A07 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D36109118F5C0C300981A07 /* trophy.png */; };
 		1D3E66F118FC64ED00418751 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E66F018FC64ED00418751 /* settings.png */; };
@@ -36,7 +37,6 @@
 		1DDA39CB18F04FE800B01F1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA39A718F04FE800B01F1E /* Foundation.framework */; };
 		1DDA39CC18F04FE800B01F1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA39AB18F04FE800B01F1E /* UIKit.framework */; };
 		1DDA39D418F04FE800B01F1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DDA39D218F04FE800B01F1E /* InfoPlist.strings */; };
-		1DDA39D618F04FE800B01F1E /* hangman_finalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA39D518F04FE800B01F1E /* hangman_finalTests.m */; };
 		1DDA39E118F0591E00B01F1E /* RSLGameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA39E018F0591E00B01F1E /* RSLGameplay.m */; };
 		1DDA39E518F0703500B01F1E /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DDA39E418F0703500B01F1E /* words.plist */; };
 		1DE92A0218FC346700570C6F /* restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE92A0118FC346700570C6F /* restart.png */; };
@@ -55,6 +55,7 @@
 /* Begin PBXFileReference section */
 		1D1619CC18F96505004067D9 /* RSLHighscoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLHighscoreController.h; sourceTree = "<group>"; };
 		1D1619CD18F96505004067D9 /* RSLHighscoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLHighscoreController.m; sourceTree = "<group>"; };
+		1D25F1A618FFCE9100984F76 /* RSLGameplayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLGameplayTest.m; sourceTree = "<group>"; };
 		1D36108E18F5BD1000981A07 /* RSLHighscoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLHighscoresViewController.h; sourceTree = "<group>"; };
 		1D36108F18F5BD1000981A07 /* RSLHighscoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLHighscoresViewController.m; sourceTree = "<group>"; };
 		1D36109118F5C0C300981A07 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		1DDA39C918F04FE800B01F1E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1DDA39D118F04FE800B01F1E /* hangman-finalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hangman-finalTests-Info.plist"; sourceTree = "<group>"; };
 		1DDA39D318F04FE800B01F1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1DDA39D518F04FE800B01F1E /* hangman_finalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hangman_finalTests.m; sourceTree = "<group>"; };
 		1DDA39DF18F0591E00B01F1E /* RSLGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLGameplay.h; sourceTree = "<group>"; };
 		1DDA39E018F0591E00B01F1E /* RSLGameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLGameplay.m; sourceTree = "<group>"; };
 		1DDA39E418F0703500B01F1E /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 		1DDA39CF18F04FE800B01F1E /* hangman-finalTests */ = {
 			isa = PBXGroup;
 			children = (
-				1DDA39D518F04FE800B01F1E /* hangman_finalTests.m */,
 				1DDA39D018F04FE800B01F1E /* Supporting Files */,
+				1D25F1A618FFCE9100984F76 /* RSLGameplayTest.m */,
 			);
 			path = "hangman-finalTests";
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDA39D618F04FE800B01F1E /* hangman_finalTests.m in Sources */,
+				1D25F1A718FFCE9100984F76 /* RSLGameplayTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

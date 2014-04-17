@@ -19,7 +19,9 @@
 @property (nonatomic) NSNumber *totalNumberGuesses;
 
 - (id) init;
-- (NSString *) checkIfCharacterExistsInWord: (NSString *) character;
-- (NSString *) characterPicked:(NSString * ) character;
+- (BOOL) checkIfCharacterExistsInWord: (NSString *) character;
+- (BOOL) characterPicked:(NSString * ) character;
+- (NSString *) convertToUpperCase:(NSString *) character;
+- (void) setWordStringForLabel;
 
 @end

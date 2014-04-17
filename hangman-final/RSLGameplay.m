@@ -40,11 +40,11 @@
 
 }
 
-- (NSString *) characterPicked:(NSString * ) character{
+- (BOOL) characterPicked:(NSString * ) character{
     NSString *characterUpperCase = [self convertToUpperCase:character];
     for(NSString *alreadyPicked in _chosenCharacters){
         if([alreadyPicked isEqualToString:characterUpperCase]){
-            return @"You already picked that one!";
+            return NO;
         }
     }
     [_chosenCharacters addObject:characterUpperCase];
@@ -55,7 +55,7 @@
     return [character uppercaseString];
 }
 
-- (NSString *) checkIfCharacterExistsInWord: (NSString *) character{
+- (BOOL) checkIfCharacterExistsInWord: (NSString *) character{
     if([self.wordToGuessMutable rangeOfString:character].location != NSNotFound){
         while([self.wordToGuessMutable rangeOfString:character].location != NSNotFound){
             int location =  [self.wordToGuessMutable rangeOfString:character].location;
@@ -65,10 +65,10 @@
             NSRange range2 = NSMakeRange(location, 1);
             [_wordStringForLabel replaceCharactersInRange:range2 withString:character];
         }
-        return @"nice one! pick another character!";
+        return YES;
     }else{
         _guessesLeft = [NSNumber numberWithInt: _guessesLeft.intValue - 1];
-        return @"your guess was wrong please try again!";
+        return NO;
     }
 }
 
