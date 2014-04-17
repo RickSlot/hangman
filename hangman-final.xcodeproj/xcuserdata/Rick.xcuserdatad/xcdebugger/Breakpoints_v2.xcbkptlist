@@ -175,8 +175,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "-addHighscoreWithName:andScore:"
-            landmarkType = "5">
+            landmarkName = "@implementation RSLHighscoreController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -271,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "-calculateHighscoreWithGuessesLeft:wordLength:totalNumberGuesses:"
+            landmarkName = "-addHighscoreWithName:andScore:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
