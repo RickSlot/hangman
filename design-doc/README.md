@@ -14,10 +14,6 @@ This viewcontroller is the main entry of the game. it starts the game and handle
 //Set up everything that is needed for play
 - (void)viewDidLoad
 
-
-- (void)keyboardWillHide:(NSNotification *)n
-- (void)keyboardWillShow:(NSNotification *)n;
-
 //handle user input
 -(BOOL) textFieldShouldReturn:(UITextField *)textField;
 
@@ -40,6 +36,23 @@ This class handles all the gameplay elements such as choosing a word and checkin
 
 //Checks if a character is already picked, if not call checkIfCharacterExistsinword
 - (NSString *) characterPicked:(NSString * ) character;
+```
+
+##RSLHighscoreController
+This class handles everything that has to do with highscores. both highscoreviewcontroller and mainviewcontroller have a higschore object.
+the highscores will be saved in a plist. every higschore has two values; a name and a score. these are saved with the keys name[1-10] and score[1-10];
+```Objective-c
+//creates an new object
+- (id) init;
+
+//adds a highscore with a name and a score
+- (void) addHighscoreWithName:(NSString *) name andScore:(int) score;
+
+//returns the plist with the highscores
+- (NSMutableDictionary*)dictionaryFromPlist;
+
+//calulates the score
+- (int) calculateHighscoreWithGuessesLeft:(int) guessesLeft wordLength:(int) wordLength totalNumberGuesses:(int) totalNumberGuesses;
 ```
 
 
