@@ -47,14 +47,27 @@
  * This function checks if a character is already picked and handles the input
  */
 - (BOOL) characterPicked:(NSString * ) character{
-    NSString *characterUpperCase = [self convertToUpperCase:character];
-    for(NSString *alreadyPicked in _chosenCharacters){
-        if([alreadyPicked isEqualToString:characterUpperCase]){
-            return NO;
-        }
+    const char *chara = [character UTF8String];
+    BOOL isCharacter = NO;
+    if(((chara[0] >= 'a') && (chara[0] <= 'z'))){
+        isCharacter = YES;
     }
-    [_chosenCharacters addObject:characterUpperCase];
-    return [self checkIfCharacterExistsInWord:characterUpperCase];
+    if(((chara[0] >= 'A') && (chara[0] <= 'Z'))){
+        isCharacter = YES;
+    }
+    
+    if(isCharacter){
+        NSString *characterUpperCase = [self convertToUpperCase:character];
+        for(NSString *alreadyPicked in _chosenCharacters){
+            if([alreadyPicked isEqualToString:characterUpperCase]){
+                return NO;
+            }
+        }
+        [_chosenCharacters addObject:characterUpperCase];
+        return [self checkIfCharacterExistsInWord:characterUpperCase];
+    }
+    return false;
+
 }
 
 /*
