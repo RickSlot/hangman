@@ -97,5 +97,33 @@
     _wordStringForLabel = labelString;
 }
 
+/*
+ * This function calculates which image should be shown
+ */
+- (NSString *) calculateImage{
+    double percentage = [self.guessesLeft doubleValue] / [self.totalNumberGuesses doubleValue];
+    NSString *imageName;
+    if(percentage == 0){
+        imageName = @"hangman0";
+    }else if(percentage < 0.125){
+        imageName = @"hangman1";
+    }else if(percentage < 0.25){
+        imageName = @"hangman2";
+    }else if(percentage < 0.375){
+        imageName = @"hangman3";
+    }else if(percentage < 0.5){
+        imageName = @"hangman4";
+    }else if(percentage < 0.625){
+        imageName = @"hangman5";
+    }else if(percentage < 0.75){
+        imageName = @"hangman6";
+    }else if(percentage < 0.875){
+        imageName = @"hangman7";
+    }else if(percentage >= 0.875){
+        imageName = @"hangman8";
+    }
+    return imageName;
+}
+
 @end
 

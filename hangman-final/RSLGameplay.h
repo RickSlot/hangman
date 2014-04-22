@@ -23,5 +23,6 @@
 - (BOOL) characterPicked:(NSString * ) character;
 - (NSString *) convertToUpperCase:(NSString *) character;
 - (void) setWordStringForLabel;
+- (NSString *) calculateImage;
 
 @end
